@@ -19,12 +19,16 @@ namespace Invalid.profileloading
 
         public Example_Session()
         {
+
             Instance = this;
             beforeStartTime = DateTime.UtcNow;
+
         }
+
 
         public override void LoadData()
         {
+
         }
 
         public override void BeforeStart()
@@ -39,9 +43,10 @@ namespace Invalid.profileloading
                 var message = $"Player {playerName} loaded in {totalTime.TotalSeconds:F2} seconds.";
 
                 // Send the message to chat
-                MyAPIGateway.Utilities.ShowMessage("Player Loaded", message);
+                MyVisualScriptLogicProvider.SendChatMessage("Player Loaded", message);
             }
         }
+
 
         // Other overridden methods...
     }
