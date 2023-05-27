@@ -26,7 +26,12 @@ namespace Invalid.profileloading
         }
 
 
-        public override void Init(MyObjectBuilder_SessionComponent sessionComponent)
+        public override void LoadData()
+        {
+
+        }
+
+        public override void BeforeStart()
         {
             var totalTime = DateTime.UtcNow - beforeStartTime;
             loadTime = totalTime;
@@ -38,7 +43,7 @@ namespace Invalid.profileloading
                 var message = $"{playerName} loaded in {totalTime.TotalSeconds:F2} seconds.";
 
                 // Send the message to chat
-                MyAPIGateway.Utilities.ShowMessage("Server", message);
+                MyAPIGateway.Utilities.SendMessage(message);
             }
         }
 
