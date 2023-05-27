@@ -40,10 +40,10 @@ namespace Invalid.profileloading
             if (MyAPIGateway.Session?.Player != null)
             {
                 var playerName = MyAPIGateway.Session.Player.DisplayName;
-                var message = $"Player {playerName} loaded in {totalTime.TotalSeconds:F2} seconds.";
+                var message = $"{playerName} loaded in {totalTime.TotalSeconds:F2} seconds.";
 
                 // Send the message to chat
-                MyVisualScriptLogicProvider.SendChatMessage("Player Loaded", message);
+                MyAPIGateway.Utilities.ShowMessage("Server", message);
             }
         }
 
