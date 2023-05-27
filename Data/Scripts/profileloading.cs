@@ -26,12 +26,7 @@ namespace Invalid.profileloading
         }
 
 
-        public override void LoadData()
-        {
-
-        }
-
-        public override void BeforeStart()
+        public override void Init(MyObjectBuilder_SessionComponent sessionComponent)
         {
             var totalTime = DateTime.UtcNow - beforeStartTime;
             loadTime = totalTime;
